@@ -2,13 +2,25 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Angular2Hn</title>
+  <title>Angular2 HN</title>
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <app-root>Loading...</app-root>
+  <app-root>launch my baby ...</app-root>
+
+  <script>
+        if ('serviceWorker' in navigator){
+            navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+              //registration was successful
+              console.log('serviceworker registration successful with scope: ', registration.scope);
+            }).catch(function(err){
+              //registration failed
+              console.log('serviceworker registration failed: ', err);
+            });
+        }
+  </script>
 </body>
 </html>
